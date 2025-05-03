@@ -29,9 +29,8 @@ public:
             << ", Creation Date: " << creationDate
             << ", Access Count: " << accessCount << endl;
     }
-};
+}
 
-// Bubble sort by file name
 void sortByName(File files[], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
@@ -51,7 +50,6 @@ int main() {
 
     File* files = new File[N];
 
-    // Input file data
     for (int i = 0; i < N; i++) {
         string name, date;
         double size;
@@ -70,14 +68,12 @@ int main() {
         files[i].set(name, size, date, access);
     }
 
-    // a) Sort by name
     sortByName(files, N);
     cout << "\n--- a) Files sorted by name ---\n";
     for (int i = 0; i < N; i++) {
         files[i].show();
     }
 
-    // b) Filter by size
     double sizeLimit;
     cout << "\n--- b) Enter size limit (MB): ";
     cin >> sizeLimit;
@@ -88,7 +84,6 @@ int main() {
         }
     }
 
-    // c) Filter by access count
     int accessLimit;
     cout << "\n--- c) Enter access count limit: ";
     cin >> accessLimit;
